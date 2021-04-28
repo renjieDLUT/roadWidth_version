@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>RoadWidth</name>
+    <version>0.0.0</version>
+    <description>extract message from gridmap </description>
+    <maintainer email="renjie@todo.todo">renjie</maintainer>
+    <license>TODO</license>
+    <buildtool_depend>catkin</buildtool_depend>
+</package>

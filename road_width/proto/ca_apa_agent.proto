@@ -1,0 +1,107 @@
+/***************************************************************************
+#
+#        Shanghai Zongmu Technology Co. Ltd.
+#
+#     Copyright (c) 2019 by Shanghai Zongmu Technology Co. Ltd.
+#     All rights reserved.
+#
+#     This Software is protected by People's Republic of China copyright
+#     laws and international treaties.  You may not reverse engineer,
+#     decompile or disassemble this Software.
+#
+#     WARNING:
+#     This Software contains Shanghai Zongmu Technology Co. Ltd.'s
+#     confidential and proprietary information. UNAUTHORIZED COPYING,
+#     USE, DISTRIBUTION, PUBLICATION, TRANSFER, SALE, RENTAL OR DISCLOSURE
+#     IS PROHIBITED AND MAY RESULT IN SERIOUS LEGAL CONSEQUENCES.  Do not
+#     copy this Software without Shanghai Zongmu Technology Co. Ltd.'s
+#     express written permission.   Use of any portion of the contents of
+#     this Software is subject to and restricted by your written agreement
+#     with Shanghai Zongmu Technology Co. Ltd.
+#
+# ***************************************************************************/
+
+syntax = "proto2";
+
+package zros.ca_apa_transport.apa_agent;
+
+message ApaGlobalVehiclePose_T {
+    required int32 GlobalVehX = 1;
+    required int32 GlobalVehY = 2;
+    required float GlobalVehAngle = 3;
+}
+
+message Slot_T {
+    required int32 P0X = 1;
+    required int32 P0Y = 2;
+    required int32 P0Prop = 3;
+    required int32 P1X = 4;
+    required int32 P1Y = 5;
+    required int32 P1Prop = 6;
+    required int32 P2X = 7;
+    required int32 P2Y = 8;
+    required int32 P2Prop = 9;
+    required int32 P3X = 10;
+    required int32 P3Y = 11;
+    required int32 P3Prop = 12;
+    optional int32 P4X = 13;
+    optional int32 P4Y = 14;
+    optional int32 P5X = 15;
+    optional int32 P5Y = 16;
+    optional int32 EdgeType = 17;
+    optional int32 ID = 18; // used for selecting slot (temporarily)
+}
+
+message ApaSlotsInfo_T {
+    required int32 SelectedSlotID = 1;
+    repeated Slot_T UssSlot = 2; // uss slot
+    repeated Slot_T PldSlot = 3; // sod slot
+}
+
+message TrackSlot_T {
+    required int32 P0X = 1;
+    required int32 P0Y = 2;
+    required int32 P0Prop = 3;
+    required int32 P1X = 4;
+    required int32 P1Y = 5;
+    required int32 P1Prop = 6;
+    required int32 P2X = 7;
+    required int32 P2Y = 8;
+    required int32 P2Prop = 9;
+    required int32 P3X = 10;
+    required int32 P3Y = 11;
+    required int32 P3Prop = 12;
+    optional int32 P4X = 13;
+    optional int32 P4Y = 14;
+    optional int32 P5X = 15;
+    optional int32 P5Y = 16;
+    optional int32 EdgeType = 17;
+    optional int32 Obj1Type = 18;
+    optional int32 Obj2Type = 19;
+    optional int32 ID = 20; // used for tracking slot (temporarily)
+}
+
+message ApaTrackSlotsInfo_T {
+    required int32 UssTrackStatus = 1;
+    required int32 PldTrackStatus = 2;
+    optional TrackSlot_T TrackSlot1 = 3; // uss slot
+    optional TrackSlot_T TrackSlot2 = 4; // sod slot
+}
+
+message Obstacle_T {
+    required int32 ID = 1;
+    required int32 DetecProp = 2;
+    required int32 BlindProp = 3;
+    required int32 Class = 4;
+    required int32 Width = 5;
+    required int32 Spdx = 6;
+    required int32 Spdy = 7;
+    required int32 Dist1x = 8;
+    required int32 Dist1y = 9;
+    required int32 Dist2x = 10;
+    required int32 Dist2y = 11;
+}
+
+message ApaObstaclesInfo_T {
+    repeated Obstacle_T Objects = 1;
+}

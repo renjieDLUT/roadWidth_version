@@ -1,0 +1,36 @@
+/***************************************************************************
+#                                                                          
+#        Shanghai Zongmu Technology Co. Ltd.     
+#                                                                          
+#     Copyright (c) 2019 by Shanghai Zongmu Technology Co. Ltd.            
+#     All rights reserved.                                                 
+#                                                                          
+#     This Software is protected by People's Republic of China copyright   
+#     laws and international treaties.  You may not reverse engineer,      
+#     decompile or disassemble this Software.                              
+#                                                                          
+#     WARNING:                                                             
+#     This Software contains Shanghai Zongmu Technology Co. Ltd.'s         
+#     confidential and proprietary information. UNAUTHORIZED COPYING,      
+#     USE, DISTRIBUTION, PUBLICATION, TRANSFER, SALE, RENTAL OR DISCLOSURE 
+#     IS PROHIBITED AND MAY RESULT IN SERIOUS LEGAL CONSEQUENCES.  Do not  
+#     copy this Software without Shanghai Zongmu Technology Co. Ltd.'s     
+#     express written permission.   Use of any portion of the contents of  
+#     this Software is subject to and restricted by your written agreement 
+#     with Shanghai Zongmu Technology Co. Ltd.                             
+#                                                                          
+# ***************************************************************************/
+
+syntax = "proto2";
+
+package zros.common_transport.grid_map;
+
+import "zros/std_msgs/header.proto";
+import "zros/std_msgs/map_meta_data.proto";
+
+message ExtendedOccupancyGrid {
+    required uint64 free_prob_tag = 1;
+    required uint64 occupied_prob_tag = 2;
+    optional zros.std_msgs.Header header = 3;
+    optional zros.std_msgs.MapMetaData info = 4;
+}

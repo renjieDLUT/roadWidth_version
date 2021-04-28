@@ -1,0 +1,40 @@
+%YAML:1.0
+---
+
+topic1: fused_grid_map.topic
+topic2: ca_apa_car_pose.topic
+
+function: 1               # 1. roadWidth   2. lane   3.all
+debugBool: 0             #  0. false    1. true
+debugMode: 0             #  0. screen  1. file
+calMode: 1               # 0. call function    1.period
+coutFile: /tmp/roadWidth.log
+cfgFile: /zros/res/capa/cfg.yaml
+
+scale: 10
+front: 100
+rear:  300
+thresholdAngle: 0.02
+num: 1
+maxRoadWidth: 700
+mode: 2
+freeThreshold: 0.6
+occupiedThreshold: 0.75
+modeMap: 2     # 1. refer to freeThreshold  2. refer to occupiedThreshold
+ignorePtsNum: 3
+period: 1000
+
+vehicle_length: 450
+vehicle_width: 180
+vehicle_minR: 500
+vehicle_front: 100
+vehicle_rear: 100
+
+hough_rho: 1
+hough_theta_deg: 1
+hough_threshold: 30
+hough_minLineLength: 30
+hough_maxLineGap: 8
+
+
+
